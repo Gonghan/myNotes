@@ -14,7 +14,7 @@ include_once './template/header.php';
             <button class="btn btn-default">Cancel</button>
         </div>
         <div id="display-notes" class="col-sm-offset-2 col-sm-8">
-            <h2><p class="text-info">All notes of <b><?php echo $_SESSION['name'];?></b></p></h2>
+            <h2><p class="text-info">All notes of <b><?php echo $_SESSION['name']; ?></b></p></h2>
             <ul id="note-list">
             </ul>
         </div>
@@ -22,7 +22,6 @@ include_once './template/header.php';
 </div>
 <script>
     makeActive(1);
-    showAllNotes();
     $(function () {
         <?php
             if(!empty($_SESSION['name'])){
@@ -36,15 +35,16 @@ include_once './template/header.php';
             }
         ?>
     });
-    var list=$('#note-list');
+    var list = $('#note-list');
     var title = $('#new-note input');
-    var output=$('#output');
-    var description=$('#note-list-descriptions');
+    var output = $('#output');
+    var description = $('#note-list-descriptions');
     output.hide();
     title.hide();
     var addnote_btn = $('#new-note button').first().hide();
     var cancelnote_btn = $('#new-note button').last().hide();
     var content = $('#new-note textarea');
+    showAllNotes();
     content.on('focus', function () {
         showNewNote();
     });
@@ -54,25 +54,23 @@ include_once './template/header.php';
     addnote_btn.on('click', function () {
         addNote(title.val(), content.val());
     });
-    function showAllNotes(){
-        var data=getNotes();
-        for(var i=0;i<data.length;i++){
-            var row=data[i];
-            console.log(row.title);
-        }
-    }
-    function getNotes(){
-        $.ajax(
-            {
-                url:'./core/api/shownotes.php',
-                type:'POST',
-                success:function(data){
-                    console.log(data);
-                    return data;
-                }
+    function showAllNotes() {
+        removeList();
+        $.post('./core/api/shownotes.php', function (data) {
+            var json_obj = $.parseJSON(data);
+            for (var j in json_obj) {
+                var i = json_obj.length - j - 1;
+                var lt = json_obj[i].title;
+                var ln = json_obj[i].name;
+                var lc = json_obj[i].content;
+                var lca = json_obj[i].created_at;
+                var li = json_obj[i].id;
+                list.append($('<li>').text(lt));
             }
-        );
-        return null;
+        });
+    }
+    function removeList() {
+        list.find('li').remove();
     }
     function addNote(t, c) {
         var request = $.ajax({
@@ -80,10 +78,11 @@ include_once './template/header.php';
             data: {content: content.val(), title: title.val()},
             url: './core/api/addnote.php'
         });
-        request.done(function(){
+        request.done(function () {
             output.text('Well Done! You successfully add a note.');
             clearNewNote();
             output.show();
+            showAllNotes();
         });
     }
     function showNewNote() {
@@ -115,6 +114,10 @@ include_once './template/header.php';
 <style>
     body {
         padding-top: 70px;
+    }
+
+    textarea {
+        resize: none;
     }
 </style>
 <?php
