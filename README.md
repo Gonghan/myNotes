@@ -38,6 +38,7 @@ If you want to run it on your local machine, change the line 17 in db.php:
 ```sh
 $this->link=mysql_connect("localhost:3306","root","123456");
 ```
+Open the url: ./notes/core/api/setup.php to finish the database setup.
 
 Prerequisite
 ----
