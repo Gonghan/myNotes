@@ -22,7 +22,7 @@ MyNotes uses a number of tools or services:
 * **Twitter** Bootstrap - great UI boilerplate for modern web apps
 * **MySQL** - the world's most popular open source database
 * **PHP** - a server-side scripting language designed for web development but also used as a general-purpose programming language
-* AppFog - Simple PaaS for Java, Node, Ruby, PHP, MySQL, Mongo, PostgreSQL, and more
+* **AppFog** - Simple PaaS for Java, Node, Ruby, PHP, MySQL, Mongo, PostgreSQL, and more
 
 Installation
 --------------
