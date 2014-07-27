@@ -1,0 +1,10 @@
+#login-output {
+    display: none;
+    float: left;
+}
+#login-notification{
+    text-align: center;
+}
+#new-note{
+    align: center;
+}
