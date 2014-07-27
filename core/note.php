@@ -36,7 +36,7 @@ class Note
             return $arr;
         }
         $name=$_SESSION['name'];
-        $sql="SELECT * FROM notes WHERE name='$name' ORDER BY 'created_at' DESC ";
+        $sql="SELECT * FROM notes WHERE name='$name' ORDER BY 'created_at'  DESC LIMIT 0,30; ";
         $result=mysql_query($sql);
         $row=mysql_fetch_array($result);
         while(!empty($row)){
