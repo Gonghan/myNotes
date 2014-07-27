@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./template/style.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -26,7 +27,7 @@ session_start();
             <ul class="nav navbar-nav">
                 <li class="active"><a href="./">Home</a></li>
                 <li><a href="./mynotes.php">My Notes</a></li>
-                <li><a href="#contact">Alerts</a></li>
+                <li><a href="./core/api/setup.php">Setup</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
