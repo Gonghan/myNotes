@@ -34,12 +34,14 @@ class DB{
         mysql_query($drop_old_users_table);
 		$create_user_table="CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT,name VARCHAR(255) NOT NULL,email VARCHAR(255) NOT NULL,password VARCHAR(255)NOT NULL,primary key(id));";
 		mysql_query($create_user_table);
-		
+		echo 'Successfully created table users<br/>';
 		//setup the table notes
 		$drop_old_notes_table="DROP TABLE IF EXISTS notes";
         mysql_query($drop_old_notes_table);
-		$create_notes_table="CREATE TABLE notes(id INT NOT NULL AUTO_INCREMENT,title VARCHAR(255) NOT NULL,email VARCHAR(255) NOT NULL,content VARCHAR(255)NOT NULL,updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,created_at DATETIME DEFAULT NULL,primary key(id));";
+		$create_notes_table="CREATE TABLE notes(id INT NOT NULL AUTO_INCREMENT,title VARCHAR(255) NOT NULL,name VARCHAR(255) NOT NULL,content VARCHAR(255)NOT NULL,updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,primary key(id));";
 		mysql_query($create_notes_table);
+        echo 'Successfully created table notes<br/>';
+        echo 'Done<br/>';
 	}
 }
 ?>
