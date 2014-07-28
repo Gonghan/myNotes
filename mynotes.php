@@ -15,7 +15,7 @@ include_once './template/header.php';
         </div>
         <div id="display-notes" class="col-sm-offset-2 col-sm-8">
             <h2><p class="text-info">All notes of <b><?php echo $_SESSION['name']; ?></b></p></h2>
-            <ul id="note-list">
+            <ul id="grid" class="list-inline">
             </ul>
         </div>
     </div>
@@ -35,7 +35,7 @@ include_once './template/header.php';
             }
         ?>
     });
-    var list = $('#note-list');
+    var list = $('#grid');
     var title = $('#new-note input');
     var output = $('#output');
     var description = $('#note-list-descriptions');
@@ -54,18 +54,19 @@ include_once './template/header.php';
     addnote_btn.on('click', function () {
         addNote(title.val(), content.val());
     });
+    function showNote(note) {
+        var newrow = '<li><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">' + note.title + '</h3></div><div class="panel-body">' + note.content + '</div><div class="panel-footer">' + note.created_at + '</div></div></li>';
+        //console.log(newrow);
+        list.append($(newrow));
+        list.find('li').addClass('col-sm-4');
+    }
     function showAllNotes() {
         removeList();
         $.post('./core/api/shownotes.php', function (data) {
             var json_obj = $.parseJSON(data);
             for (var j in json_obj) {
                 var i = json_obj.length - j - 1;
-                var lt = json_obj[i].title;
-                var ln = json_obj[i].name;
-                var lc = json_obj[i].content;
-                var lca = json_obj[i].created_at;
-                var li = json_obj[i].id;
-                list.append($('<li>').text(lt));
+                showNote(json_obj[i]);
             }
         });
     }
@@ -75,7 +76,7 @@ include_once './template/header.php';
     function addNote(t, c) {
         var request = $.ajax({
             type: 'POST',
-            data: {content: content.val(), title: title.val()},
+            data: {title: title.val(), content: content.val()},
             url: './core/api/addnote.php'
         });
         request.done(function () {
@@ -118,6 +119,9 @@ include_once './template/header.php';
 
     textarea {
         resize: none;
+    }
+    #grid li{
+
     }
 </style>
 <?php

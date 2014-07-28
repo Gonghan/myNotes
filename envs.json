@@ -1,25 +1,25 @@
-{  
-   "mysql-5.1":[  
-      {  
-         "name":"notedb",
-         "label":"mysql-5.1",
-         "plan":"free",
-         "tags":[  
-            "mysql",
-            "mysql-5.1",
-            "relational",
-            "mysql-5.1",
-            "mysql"
-         ],
-         "credentials":{  
-            "name":"d1f01d029f65147ab85a76affd44d0a8a",
-            "hostname":"us01-user01.crtks9njytxu.us-east-1.rds.amazonaws.com",
-            "host":"us01-user01.crtks9njytxu.us-east-1.rds.amazonaws.com",
-            "port":3306,
-            "user":"uCUwoFACTUYwh",
-            "username":"uCUwoFACTUYwh",
-            "password":"pVi10I3EkqLTT"
-         }
-      }
-   ]
+{
+    "mysql-5.1": [
+        {
+            "name": "notedb",
+            "label": "mysql-5.1",
+            "plan": "free",
+            "tags": [
+                "mysql",
+                "mysql-5.1",
+                "relational",
+                "mysql-5.1",
+                "mysql"
+            ],
+            "credentials": {
+                "name": "d1f01d029f65147ab85a76affd44d0a8a",
+                "hostname": "us01-user01.crtks9njytxu.us-east-1.rds.amazonaws.com",
+                "host": "us01-user01.crtks9njytxu.us-east-1.rds.amazonaws.com",
+                "port": 3306,
+                "user": "uCUwoFACTUYwh",
+                "username": "uCUwoFACTUYwh",
+                "password": "pVi10I3EkqLTT"
+            }
+        }
+    ]
 }
