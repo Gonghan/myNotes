@@ -10,7 +10,7 @@ include './template/header.php';
         <p>The next-generation note-taking web app.</p>
 
         <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
+            <a class="btn btn-lg btn-primary" href="#" role="button">Tutorial &raquo;</a>
         </p>
     </div>
 
