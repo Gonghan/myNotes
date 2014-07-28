@@ -41,6 +41,10 @@ $this->link=mysql_connect("localhost:3306","root","123456");
 ```
 Open the url: ./notes/core/api/setup.php to finish the database setup.
 
+```sh
+mysql -u username -p password
+create database notes;
+```
 Prerequisite
 ----
 * Apache web server 2+
