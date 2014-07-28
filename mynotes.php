@@ -38,15 +38,18 @@ include_once './template/header.php';
     var list = $('#grid');
     var title = $('#new-note input');
     var output = $('#output');
-    var description = $('#note-list-descriptions');
     output.hide();
     title.hide();
     var addnote_btn = $('#new-note button').first().hide();
     var cancelnote_btn = $('#new-note button').last().hide();
     var content = $('#new-note textarea');
     showAllNotes();
-    content.on('focus', function () {
+    content.on('click', function (event) {
+        event.stopPropagation();
         showNewNote();
+    });
+    title.on('click',function(event){
+        event.stopPropagation();
     });
     cancelnote_btn.on('click', function () {
         clearNewNote();
@@ -54,10 +57,13 @@ include_once './template/header.php';
     addnote_btn.on('click', function () {
         addNote(title.val(), content.val());
     });
+    $(document.body).on('click',function(){
+        clearNewNote();
+    });
     function showNote(note) {
-        var newrow = '<li><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">' + note.title + '</h3></div><div class="panel-body">' + note.content + '</div><div class="panel-footer">' + note.created_at + '</div></div></li>';
+        var newrow = '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title">' + note.title + '</h3></div><div class="panel-body">' + note.content + '</div><div class="panel-footer">' + note.created_at + '</div></div>';
         //console.log(newrow);
-        list.append($(newrow));
+        list.append($('<li>'+newrow+'</li>'));
         list.find('li').addClass('col-sm-4');
     }
     function showAllNotes() {
