@@ -9,6 +9,8 @@ MyNotes is a cloud-based note-taking app.
 The app is deployed on AppFog. You can check the url: http://mynotes.aws.af.cm/.
 If that link doesn't work, use this one: http://54.193.41.130/myNotes/.
 
+
+You can try to use the test account: {email=wanggonghan@gmail.com, password=123456}.
 Version
 ----
 
