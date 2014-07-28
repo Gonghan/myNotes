@@ -7,6 +7,7 @@ MyNotes is a cloud-based note-taking app.
   - Explore cloud development
 
 The app is deployed on AppFog. You can check the url: http://mynotes.aws.af.cm/.
+If that link doesn't work, use this one: http://54.193.41.130/myNotes/.
 
 Version
 ----
@@ -18,7 +19,7 @@ Tech
 
 MyNotes uses a number of tools or services:
 
-* **JQuert** - a fast, small, and feature-rich JavaScript library
+* **JQuery** - a fast, small, and feature-rich JavaScript library
 * **Twitter** Bootstrap - great UI boilerplate for modern web apps
 * **MySQL** - the world's most popular open source database
 * **PHP** - a server-side scripting language designed for web development but also used as a general-purpose programming language
@@ -43,8 +44,8 @@ Open the url: ./notes/core/api/setup.php to finish the database setup.
 Prerequisite
 ----
 * Apache web server 2+
-* PHP 5+
-* MySQL 5+
+* PHP 5.4+
+* MySQL 5.1+
 
 License
 ----
