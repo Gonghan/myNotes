@@ -29,7 +29,9 @@ session_start();
             <ul class="nav navbar-nav">
                 <li class="active"><a href="./">Home</a></li>
                 <li><a href="./mynotes.php">My Notes</a></li>
-                <li><a href="./core/api/setup.php">Setup</a></li>
+                <!--
+					<li><a href="./core/api/setup.php">Setup</a></li>
+				-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php
