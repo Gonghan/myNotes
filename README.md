@@ -31,6 +31,7 @@ Installation
 --------------
 
 ```sh
+cd apache_path/www/
 git clone git@github.com:Gonghan/myNotes.git
 cd myNotes
 vim ./core/db.php
