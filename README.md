@@ -7,7 +7,7 @@ MyNotes is a cloud-based note-taking app.
   - Explore cloud development
 
 The app is deployed on AppFog. You can check the url: http://mynotes.aws.af.cm/.
-If that link doesn't work, use this one: http://54.193.41.130/myNotes/.
+If that link doesn't work, use this one: http://54.183.179.198/myNotes.
 
 
 You can try to use the test account: {email=wanggonghan@gmail.com, password=123456}.
@@ -45,8 +45,9 @@ $this->link=mysql_connect("localhost:3306","root","123456");
 Open the url: ./notes/core/api/setup.php to finish the database setup.
 
 ```sh
-mysql -u username -p password
-create database notes;
+mysql -u username -p
+>> [your_password]
+>> create database notes;
 ```
 Prerequisite
 ----
